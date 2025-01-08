@@ -11,7 +11,7 @@ pipeline
 }}
         }
         stage('deploy to tomcat server')
-{steps { sshagent(['deploy-to-tomcat'])
+{steps { sshagent(credentials: ['test'])
 {
 	sh 'scp -o StrictHostKeyChecking=no java-test/target/hello-app-1.0.jar ec2-user@172.31.18.254:/usr/share/tomcat/webapps'
 
