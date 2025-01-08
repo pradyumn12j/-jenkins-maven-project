@@ -13,7 +13,7 @@ pipeline
         stage('deploy to tomcat server')
 {steps { sshagent(credentials: ['test'])
 {
-	sh 'scp -o StrictHostKeyChecking=no /target/hello-app-1.0.jar ec2-user@172.31.18.254:/usr/share/tomcat/webapps'
+	sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/java-test/target/ ec2-user@172.31.18.254:/usr/share/tomcat/webapps'
 
 } }}
 
